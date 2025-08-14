@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nano Banana — Google’s Next-Gen Image Editing AI (Beyond FLUX Kontext)</title>
+  <meta name="description" content="Meet Nano Banana, Google's next-generation image editing model. Built for precision inpainting, outpainting, background replacement, and multi-step conversational edits—surpassing FLUX Kontext in control, fidelity, and prompt following." />
+  <meta name="keywords" content="Nano Banana, Google image editing model, AI image editor, inpainting, outpainting, background replacement, FLUX Kontext alternative, generative AI, multimodal" />
+  <link rel="canonical" href="https://www.example.com/nano-banana/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nano Banana" />
+  <meta property="og:title" content="Nano Banana — Google’s Next-Gen Image Editing AI" />
+  <meta property="og:description" content="A step beyond FLUX Kontext for precise, controllable image editing with conversational workflows." />
+  <meta property="og:url" content="https://www.example.com/nano-banana/" />
+  <meta property="og:image" content="https://www.example.com/assets/nano-banana-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nano Banana — Google’s Next-Gen Image Editing AI" />
+  <meta name="twitter:description" content="Precise inpainting, background edits, and multi-step refinement—beyond FLUX Kontext." />
+  <meta name="twitter:image" content="https://www.example.com/assets/nano-banana-og.jpg" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="https://www.example.com/favicon.ico" />
+
+  <!-- Structured Data: SoftwareApplication + Breadcrumbs + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Nano Banana",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "AI Image Editing",
+        "operatingSystem": "Cloud",
+        "creator": {
+          "@type": "Organization",
+          "name": "Google"
+        },
+        "description": "Nano Banana is a next-generation AI for image editing that supports conversational inpainting, outpainting, background replacement, object addition/removal, color grading, and style adjustments with high prompt fidelity.",
+        "softwareVersion": "Preview",
+        "featureList": [
+          "Precision inpainting/outpainting",
+          "Background replacement with semantic control",
+          "Multi-step conversational editing",
+          "Mask-free guided edits via text",
+          "Reference-based style/subject transfer",
+          "High-resolution, artifact-aware render pipeline"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "category": "Beta",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "url": "https://www.example.com/nano-banana/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.example.com/" },
+          { "@type": "ListItem", "position": 2, "name": "AI Models", "item": "https://www.example.com/ai-models/" },
+          { "@type": "ListItem", "position": 3, "name": "Nano Banana", "item": "https://www.example.com/nano-banana/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Nano Banana?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nano Banana is a next-generation Google model for controllable image editing through natural language. It performs precise inpainting/outpainting, object edits, and multi-step, conversational refinements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does it compare to FLUX Kontext?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Compared to FLUX Kontext, Nano Banana is designed for stronger prompt following, finer edit locality, and more stable multi-pass refinement, especially on complex scene edits and identity-preserving changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What edit types does it support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It supports background replacement, object addition or removal, relighting, color grading, style shifts, layout-aware outpainting, and text-guided maskless edits with optional reference images."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a public API?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A preview experience is available with limited access. A public API is planned, with usage-based pricing and guardrail features."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0e0f12;
+      --fg: #f6f7fb;
+      --muted: #b7bcc7;
+      --accent: #f2d85c;
+      --card: #16181f;
+      --border: #232634;
+      --link: #8ab4ff;
+      --ok: #6ee7a8;
+    }
+
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; line-height:1.6;}
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 24px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); }
+    .logo { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:0.3px; }
+    .badge { background: var(--accent); color:#131313; font-weight:700; padding:4px 10px; border-radius:999px; font-size:12px; }
+    .hero { display:grid; grid-template-columns: 1.25fr 1fr; gap:28px; padding:36px 0; }
+    .hero h1 { font-size: clamp(28px, 4vw, 48px); line-height:1.1; margin:0 0 12px; }
+    .hero p { color: var(--muted); margin: 0 0 18px; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+    .btn { background: var(--fg); color:#111; border:0; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer; }
+    .btn.alt { background: transparent; color: var(--fg); border:1px solid var(--border); }
+    .card { background: var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+    .muted { color: var(--muted); }
+    .section { padding:28px 0; }
+    .kpis { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:10px; }
+    .kpi { background:#12141a; border:1px dashed var(--border); border-radius:12px; padding:14px; text-align:center; }
+    .kpi h3 { margin:0; font-size:22px; }
+    .kpi p { margin:6px 0 0; color: var(--muted); font-size:14px; }
+    table { width:100%; border-collapse: collapse; }
+    th, td { border:1px solid var(--border); padding:12px; vertical-align:top; }
+    th { text-align:left; background:#101219; }
+    .toc { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+    .toc a { display:block; padding:8px 10px; border:1px solid var(--border); border-radius:10px; background:#101218; }
+    .check { color: var(--ok); }
+    .note { border-left: 4px solid var(--accent); padding:12px 14px; background:#12141a; border-radius:8px; }
+    footer { border-top:1px solid var(--border); padding:18px 0 40px; margin-top:28px; color: var(--muted); font-size:14px; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap" aria-label="Site header">
+    <div class="logo" aria-label="Brand">
+      <span aria-hidden="true">🍌</span>
+      <span>Nano Banana</span>
+      <span class="badge" aria-label="Preview badge">Preview</span>
+    </div>
+    <nav aria-label="Primary">
+      <a href="#features">Features</a> ·
+      <a href="#how-it-works">How it works</a> ·
+      <a href="#comparison">Comparison</a> ·
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="content">
+    <!-- HERO -->
+    <section class="hero" id="overview">
+      <div>
+        <h1>Nano Banana — Google’s Next-Gen Image Editing AI</h1>
+        <p>
+          Built for creators and product teams who need <strong>precise, controllable, and consistent</strong> image edits.
+          From mask-free inpainting to layout-aware outpainting and background replacement, Nano Banana is engineered to
+          <em>surpass FLUX Kontext</em> in prompt following, edit locality, and multi-step conversational refinement.
+        </p>
+        <div class="cta" role="group" aria-label="Calls to action">
+          <a class="btn" href="#try" aria-label="Try Nano Banana">Try the Preview</a>
+          <a class="btn alt" href="#docs" aria-label="View documentation">View Docs</a>
+        </div>
+        <div class="kpis" aria-label="Key highlights">
+          <div class="kpi"><h3>Mask-Free</h3><p>Text-guided local edits</p></div>
+          <div class="kpi"><h3>Hi-Fidelity</h3><p>Identity & style preserved</p></div>
+          <div class="kpi"><h3>Conversational</h3><p>Multi-turn refinements</p></div>
+          <div class="kpi"><h3>Guardrails</h3><p>Safety filters & watermark</p></div>
+        </div>
+      </div>
+      <aside>
+        <div class="card" aria-labelledby="toc-title">
+          <h2 id="toc-title">On this page</h2>
+          <ul class="toc">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#use-cases">Use cases</a></li>
+            <li><a href="#comparison">Comparison with FLUX Kontext</a></li>
+            <li><a href="#best-practices">Best practices</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features" aria-labelledby="features-h">
+      <h2 id="features-h">Core Features</h2>
+      <div class="grid-3" role="list">
+        <div class="card" role="listitem">
+          <h3>Precision Inpainting</h3>
+          <p class="muted">Insert, repair, or transform regions with natural language. Strong prompt fidelity keeps geometry and materials consistent.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Layout-Aware Outpainting</h3>
+          <p class="muted">Expand canvases while preserving perspective, lighting, and scene logic for product photos, concept art, and composites.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Semantic Backgrounds</h3>
+          <p class="muted">Replace or relight backgrounds with style and palette control, from clean studio shots to cinematic scenes.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Maskless Local Edits</h3>
+          <p class="muted">No pen tool required. Describe the subject, attributes, or bounding hints; Nano Banana scopes the edit for you.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Reference-Guided Styling</h3>
+          <p class="muted">Carry identity or art direction across edits with optional reference images for consistent branding and characters.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Conversational Workflow</h3>
+          <p class="muted">Iterate step-by-step: “darker suit”, “softer light”, “shift camera lower”—the model tracks history for stable outcomes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works" aria-labelledby="hiw-h">
+      <h2 id="hiw-h">How It Works</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Multimodal Understanding</h3>
+          <p class="muted">A visual-text encoder aligns scene structure with your instruction, enabling fine-grained, localized controls without manual masks.</p>
+        </div>
+        <div class="card">
+          <h3>Stable Multi-Pass Refinement</h3>
+          <p class="muted">Edits compile across turns with artifact reduction, ensuring consistent textures, edges, and color continuity across large areas.</p>
+        </div>
+      </div>
+      <div class="note" role="note" aria-label="Safety note">
+        <strong>Trust & Safety:</strong> outputs include invisible provenance signals and are screened by policy filters for sensitive or restricted edits.
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="section" id="use-cases" aria-labelledby="use-cases-h">
+      <h2 id="use-cases-h">Use Cases</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>E-commerce</h3>
+          <p class="muted">Swap backgrounds to seasonal sets, standardize lighting, and localize props—at scale and on-brand.</p>
+        </div>
+        <div class="card">
+          <h3>Marketing & Social</h3>
+          <p class="muted">Rapid creative variants with controlled style and safe, policy-aligned edits for campaigns.</p>
+        </div>
+        <div class="card">
+          <h3>Design & Concept</h3>
+          <p class="muted">Explore alternatives quickly: materials, camera, colorways—without resetting your entire composition.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="section" id="comparison" aria-labelledby="comparison-h">
+      <h2 id="comparison-h">Comparison: Nano Banana vs. FLUX Kontext</h2>
+      <div class="card" role="region" aria-label="Comparison table">
+        <table>
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Nano Banana</th>
+              <th>FLUX Kontext</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Prompt Following</td>
+              <td><span class="check" aria-hidden="true">✓</span> Strong semantic grounding for detailed instructions</td>
+              <td>Robust, particularly for context-aware edits</td>
+            </tr>
+            <tr>
+              <td>Edit Locality</td>
+              <td><span class="check" aria-hidden="true">✓</span> Maskless, text-scoped regions; minimal spill</td>
+              <td>Good locality with context prompts</td>
+            </tr>
+            <tr>
+              <td>Multi-Turn Stability</td>
+              <td><span class="check" aria-hidden="true">✓</span> Consistent textures across iterative steps</td>
+              <td>Solid, may require re-prompts for long chains</td>
+            </tr>
+            <tr>
+              <td>Background Replacement</td>
+              <td><span class="check" aria-hidden="true">✓</span> Layout-aware with relighting</td>
+              <td>Reliable, style-aware scenes</td>
+            </tr>
+            <tr>
+              <td>Identity/Style Preservation</td>
+              <td><span class="check" aria-hidden="true">✓</span> Optional reference guidance</td>
+              <td>Contextual cues; depends on prompt quality</td>
+            </tr>
+            <tr>
+              <td>Guardrails & Provenance</td>
+              <td><span class="check" aria-hidden="true">✓</span> Safety filters + invisible provenance marks</td>
+              <td>Model-dependent safeguards</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:10px;">This comparison is directional and based on the targeted design goals of Nano Banana and well-known strengths of FLUX Kontext for context-aware editing.</p>
+    </section>
+
+    <!-- BEST PRACTICES -->
+    <section class="section" id="best-practices" aria-labelledby="bp-h">
+      <h2 id="bp-h">Best Practices</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Be Specific</h3>
+          <p class="muted">Mention subject, attributes, and the region to change. Example: “Remove the red can on the left; extend marble counter by 30%.”</p>
+        </div>
+        <div class="card">
+          <h3>Iterate in Small Steps</h3>
+          <p class="muted">Apply a sequence of focused edits (lighting → color → composition) for maximum consistency.</p>
+        </div>
+        <div class="card">
+          <h3>Use References</h3>
+          <p class="muted">Provide a brand palette or subject photo to preserve identity and style across edits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRY & DOCS (placeholders for SEO navigation) -->
+    <section class="section" id="try" aria-labelledby="try-h">
+      <h2 id="try-h">Try the Preview</h2>
+      <p class="muted">Access the limited preview to experiment with inpainting, outpainting, background replacement, and conversational refinements. Availability may be restricted.</p>
+    </section>
+
+    <section class="section" id="docs" aria-labelledby="docs-h">
+      <h2 id="docs-h">Documentation</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Quickstart</h3>
+          <pre aria-label="Quickstart example" style="white-space:pre-wrap;color:#d1d5db;background:#0c0d11;border:1px solid var(--border);border-radius:10px;padding:12px;margin:0;">
+POST /v1/images/edits
+{
+  "image": "input.jpg",
+  "prompt": "Replace background with a sunlit studio, keep product reflections natural.",
+  "steps": [
+    "soft key light",
+    "extend floor 20%",
+    "cooler white balance"
+  ],
+  "reference": "brand_look.png"
+}
+          </pre>
+        </div>
+        <div class="card">
+          <h3>Safety & Compliance</h3>
+          <ul>
+            <li>Policy filters for sensitive content</li>
+            <li>Invisible provenance signals on outputs</li>
+            <li>Respect IP and likeness rights</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Frequently Asked Questions</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Does it require masks?</h3>
+          <p class="muted">No. You can guide local edits via text. The model aligns language with regions and edges automatically.</p>
+        </div>
+        <div class="card">
+          <h3>Can I chain edits?</h3>
+          <p class="muted">Yes. Nano Banana supports multi-turn conversations where each step refines the last without drifting.</p>
+        </div>
+        <div class="card">
+          <h3>Is it production-ready?</h3>
+          <p class="muted">A preview is available. Production access will include usage tiers, rate limits, and enterprise guardrails.</p>
+        </div>
+        <div class="card">
+          <h3>How does it compare to FLUX Kontext?</h3>
+          <p class="muted">Nano Banana targets stronger prompt adherence and edit locality, especially for complex scenes and identity-preserving changes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAST UPDATED -->
+    <p class="muted" aria-label="Page metadata">Last updated: <time datetime="2025-08-14">August 14, 2025</time></p>
+  </main>
+
+  <footer class="wrap" aria-label="Site footer">
+    <p>© <span id="year">2025</span> Nano Banana (Preview). All product names, logos, and brands are property of their respective owners.</p>
+    <p>This page describes a preview model and may include forward-looking statements or design goals.</p>
+  </footer>
+
+  <script>
+    // Keep the footer year fresh without SSR
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
