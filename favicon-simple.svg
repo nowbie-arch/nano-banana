@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Ultra-simple favicon version for maximum compatibility -->
+  <path d="M3 6 Q4 3, 7 4 Q11 5, 12 8 Q13 11, 10 12 Q8 13, 6 12 Q4 11, 3 9 Z" 
+        fill="#fbbf24"/>
+  
+  <!-- Simple highlight -->
+  <path d="M4 7 Q5 5, 7 6 Q9 7, 10 8 Q10 9, 9 9 Q8 10, 7 9 Q6 8, 5 8 Z" 
+        fill="#fde047" 
+        opacity="0.8"/>
+</svg>

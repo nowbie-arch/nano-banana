@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CLRDYX27R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1CLRDYX27R');
+  </script>
+
   <!-- Essential SEO -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0e0f12" />
   <title>Nano Banana — Google’s Next-Gen Image Editing AI (Beyond FLUX Kontext)</title>
-  <meta name="description" content="Meet Nano Banana, Google's next-generation image editing model. Built for precision inpainting, outpainting, background replacement, and multi-step conversational edits—surpassing FLUX Kontext in control, fidelity, and prompt following." />
+  <meta name="description" content="Nano Banana — preview AI for precise inpainting, outpainting, and background replacement. Mask-free, text-guided edits for e‑commerce, marketing, and creative workflows." />
+  <meta name="author" content="Nano Banana" />
   <meta name="keywords" content="Nano Banana, Google image editing model, AI image editor, inpainting, outpainting, background replacement, FLUX Kontext alternative, generative AI, multimodal" />
   <link rel="canonical" href="https://www.example.com/nano-banana/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -13,17 +25,23 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nano Banana" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Nano Banana — Google’s Next-Gen Image Editing AI" />
-  <meta property="og:description" content="A step beyond FLUX Kontext for precise, controllable image editing with conversational workflows." />
+  <meta property="og:description" content="Nano Banana — preview AI for inpainting, outpainting and background replacement. Mask-free, text-guided edits for product and creative workflows." />
   <meta property="og:url" content="https://www.example.com/nano-banana/" />
   <meta property="og:image" content="https://www.example.com/assets/nano-banana-og.jpg" />
+  <meta property="og:image:alt" content="Nano Banana preview — AI image editing" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nano Banana — Google’s Next-Gen Image Editing AI" />
-  <meta name="twitter:description" content="Precise inpainting, background edits, and multi-step refinement—beyond FLUX Kontext." />
+  <meta name="twitter:description" content="Nano Banana — preview AI for precise inpainting, outpainting, and background replacement. Try the preview for mask-free, text-guided edits." />
   <meta name="twitter:image" content="https://www.example.com/assets/nano-banana-og.jpg" />
 
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="https://www.example.com/favicon.ico" />
+  <!-- Favicon and icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Structured Data: SoftwareApplication + Breadcrumbs + FAQ -->
   <script type="application/ld+json">
@@ -50,6 +68,7 @@
           "Reference-based style/subject transfer",
           "High-resolution, artifact-aware render pipeline"
         ],
+        "keywords": "inpainting, outpainting, background replacement, mask-free, image editing, text-guided edits",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -120,6 +139,12 @@
       --ok: #6ee7a8;
     }
 
+    /* Accessibility: visible skip-link on keyboard focus and improved focus outlines */
+    .skip-link { position: absolute; left: -999px; top: 12px; background: var(--accent); color: #111; padding: 8px 10px; border-radius: 8px; z-index: 9999; font-weight:700; text-decoration:none; }
+    .skip-link:focus, .skip-link:active { left: 16px; }
+    .btn:focus-visible, .toc a:focus-visible { outline: 3px solid rgba(138,180,255,0.45); outline-offset: 3px; }
+    .btn:focus, .toc a:focus { outline: 3px solid rgba(138,180,255,0.18); outline-offset: 3px; }
+
     html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; line-height:1.6;}
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -151,6 +176,18 @@
     .note { border-left: 4px solid var(--accent); padding:12px 14px; background:#12141a; border-radius:8px; }
     footer { border-top:1px solid var(--border); padding:18px 0 40px; margin-top:28px; color: var(--muted); font-size:14px; }
 
+    /* Typography & small UI polish */
+    html, body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-size:16px; }
+    .wrap p { max-width: 70ch; }
+    img { max-width:100%; height:auto; display:block; }
+    .btn { transition: transform .16s ease, box-shadow .16s ease, background-color .12s ease; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+    .btn.alt:hover { background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.06); }
+    .card { transition: transform .12s ease, box-shadow .12s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+    .muted { color: #c3c9d3; }
+    pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace; font-size:13px; }
+
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
       .grid-3 { grid-template-columns: 1fr; }
@@ -158,17 +195,470 @@
       .kpis { grid-template-columns: 1fr 1fr; }
     }
   </style>
+
+  <!-- Enhanced modern dark theme with improved styling -->
+  <style>
+    :root{
+      --bg: #0a0e17;
+      --bg-secondary: #0f1419;
+      --fg: #f0f6ff;
+      --muted: #94a3b8;
+      --muted-dark: #64748b;
+      --accent: #fbbf24; /* warm banana yellow */
+      --accent-hover: #f59e0b;
+      --accent-2: #3b82f6; /* blue accent */
+      --accent-2-hover: #2563eb;
+      --success: #10b981;
+      --card: rgba(255,255,255,0.04);
+      --card-hover: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.16);
+      --radius: 16px;
+      --shadow: 0 20px 50px rgba(0,0,0,0.7);
+      --shadow-lg: 0 25px 60px rgba(0,0,0,0.8);
+    }
+
+    /* Base improvements */
+    html,body {
+      background: 
+        radial-gradient(1200px 600px at 20% 0%, rgba(59,130,246,0.05) 0%, transparent 50%),
+        radial-gradient(800px 400px at 80% 100%, rgba(251,191,36,0.03) 0%, transparent 50%),
+        var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    .wrap p {
+      max-width: 72ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Enhanced header */
+    header {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10,14,23,0.8);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo span:first-child {
+      font-size: 24px;
+      filter: drop-shadow(0 2px 4px rgba(251,191,36,0.3));
+    }
+
+         .badge {
+       background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+       color: #ffffff; /* Pure white for maximum contrast */
+       padding: 8px 14px;
+       border-radius: 999px;
+       font-weight: 800;
+       font-size: 11px;
+       text-transform: uppercase;
+       letter-spacing: 0.5px;
+       box-shadow: 0 4px 15px rgba(251,191,36,0.2);
+       border: 1px solid rgba(0,0,0,0.15);
+       text-shadow: 0 1px 2px rgba(0,0,0,0.5); /* Stronger shadow for better readability */
+     }
+
+    /* Enhanced navigation */
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+      background: var(--card);
+      text-decoration: none;
+    }
+
+    /* Hero section enhancements */
+    .hero {
+      padding: 60px 0;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--fg) 0%, var(--muted) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* Enhanced buttons */
+    .btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: var(--bg);
+      border: 0;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(251,191,36,0.25);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(251,191,36,0.35);
+    }
+
+    .btn.alt {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+    }
+
+    .btn.alt:hover {
+      background: var(--card);
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+    }
+
+    /* Enhanced cards */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: var(--card-hover);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card h3 {
+      color: var(--fg);
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Enhanced KPI cards */
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .kpi:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 25px rgba(255,255,255,0.08);
+    }
+
+    .kpi h3 {
+      color: var(--fg);
+      font-weight: 800;
+      font-size: 24px;
+      margin: 0 0 8px;
+    }
+
+    .kpi p {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* Enhanced table */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(255,255,255,0.02);
+      color: var(--fg);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* Enhanced pre/code */
+    pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 12px;
+      color: var(--fg);
+      font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    /* Enhanced TOC */
+    .toc a {
+      display: block;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .toc a:hover {
+      background: var(--card);
+      border-color: var(--border-hover);
+      color: var(--fg);
+      transform: translateX(4px);
+    }
+
+    /* Enhanced note */
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      background: var(--card);
+      border-radius: 12px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-left-color: var(--accent);
+      border-left-width: 4px;
+    }
+
+    /* Utility classes */
+    .check {
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    /* Enhanced animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Mobile optimizations */
+    @media (max-width: 980px) {
+      .wrap { padding: 20px; }
+      .hero { 
+        grid-template-columns: 1fr; 
+        padding: 40px 0;
+        gap: 32px;
+      }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+      
+      .hero h1 {
+        font-size: clamp(28px, 8vw, 40px);
+      }
+      
+      .btn {
+        padding: 14px 20px;
+        font-size: 14px;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+      
+      th, td {
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .kpis { grid-template-columns: 1fr; }
+      .cta { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+      
+      header {
+        position: static;
+      }
+      
+      nav {
+        margin-top: 12px;
+      }
+      
+      nav a {
+        display: inline-block;
+        margin: 4px 8px 4px 0;
+      }
+    }
+
+    /* Accessibility improvements */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      
+      .card {
+        border: 1px solid #ccc !important;
+        background: #f9f9f9 !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
   <header class="wrap" aria-label="Site header">
     <div class="logo" aria-label="Brand">
-      <span aria-hidden="true">🍌</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <path d="M8 12 Q10 6, 16 8 Q24 10, 26 16 Q28 22, 22 24 Q18 26, 14 24 Q10 22, 8 18 Z" 
+              fill="url(#logoGradient)"/>
+        <path d="M10 14 Q12 10, 16 11 Q20 12, 22 16 Q22 18, 20 19 Q18 20, 16 19 Q14 18, 12 16 Z" 
+              fill="#fde047" 
+              opacity="0.7"/>
+        <circle cx="18" cy="20" r="1" fill="#3b82f6" opacity="0.8"/>
+      </svg>
       <span>Nano Banana</span>
       <span class="badge" aria-label="Preview badge">Preview</span>
     </div>
     <nav aria-label="Primary">
       <a href="#features">Features</a> ·
       <a href="#how-it-works">How it works</a> ·
+       <a href="#api-integration">API</a> ·
       <a href="#comparison">Comparison</a> ·
       <a href="#faq">FAQ</a>
     </nav>
@@ -202,6 +692,8 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#how-it-works">How it works</a></li>
             <li><a href="#use-cases">Use cases</a></li>
+            <li><a href="#examples">Sample prompts</a></li>
+             <li><a href="#api-integration">API Integration</a></li>
             <li><a href="#comparison">Comparison with FLUX Kontext</a></li>
             <li><a href="#best-practices">Best practices</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -327,6 +819,22 @@
       <p class="muted" style="margin-top:10px;">This comparison is directional and based on the targeted design goals of Nano Banana and well-known strengths of FLUX Kontext for context-aware editing.</p>
     </section>
 
+    <!-- SAMPLE PROMPTS / EXAMPLES -->
+    <section class="section" id="examples" aria-labelledby="examples-h">
+      <h2 id="examples-h">Sample Prompts &amp; Examples</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Inpainting example</h3>
+          <p class="muted">“Remove the red cup on the left and fill the area with matching countertop texture; preserve the shadow and reflections.”</p>
+        </div>
+        <div class="card">
+          <h3>Outpainting example</h3>
+          <p class="muted">“Extend the scene to the right: continue the hardwood floor and add a window with warm morning light.”</p>
+        </div>
+      </div>
+      <div style="margin-top:12px;" class="muted">Tip: be specific—mention subject, location, style, and any reference images. Use short iterative steps for large changes.</div>
+    </section>
+
     <!-- BEST PRACTICES -->
     <section class="section" id="best-practices" aria-labelledby="bp-h">
       <h2 id="bp-h">Best Practices</h2>
@@ -342,6 +850,53 @@
         <div class="card">
           <h3>Use References</h3>
           <p class="muted">Provide a brand palette or subject photo to preserve identity and style across edits.</p>
+        </div>
+      </div>
+    </section>
+
+                   <!-- API INTEGRATION -->
+      <section class="section" id="api-integration" aria-labelledby="api-h">
+        <h2 id="api-h">API Integration</h2>
+        <div class="card" style="background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(251,191,36,0.05)); border: 1px solid rgba(59,130,246,0.2);">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+            <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 12px; border-radius: 12px; box-shadow: 0 4px 15px rgba(59,130,246,0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 3L4 14h7v7l9-11h-7V3z" fill="white"/>
+              </svg>
+            </div>
+            <div>
+              <h3 style="margin: 0; color: var(--fg); font-size: 20px;">🚀 ApiQik - Lightning-Fast API Gateway</h3>
+              <p style="margin: 4px 0 0; color: var(--accent-2); font-weight: 600;">Professional AI API Integration Solution</p>
+            </div>
+          </div>
+          <p class="muted" style="margin-bottom: 16px;">
+            Ready to integrate Nano Banana and other AI models? <strong>ApiQik</strong> provides developers with stable, high-speed API gateway services, supporting multiple AI models including image editing, text generation, and more.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: var(--success);">✓</span>
+              <span style="color: var(--muted); font-size: 14px;">99.9% Service Uptime</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: var(--success);">✓</span>
+              <span style="color: var(--muted); font-size: 14px;">Sub-100ms Response Time</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: var(--success);">✓</span>
+              <span style="color: var(--muted); font-size: 14px;">Enterprise-Grade Security</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: var(--success);">✓</span>
+              <span style="color: var(--muted); font-size: 14px;">24/7 Technical Support</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 20px;">
+            <a href="https://api.apiqik.com/" target="_blank" class="btn" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; text-decoration: none;">
+              Try ApiQik Now
+            </a>
+            <a href="https://api.apiqik.com/" target="_blank" class="btn alt" style="border-color: rgba(59,130,246,0.3); color: var(--accent-2); text-decoration: none;">
+              🎁 Start Free Trial
+            </a>
         </div>
       </div>
     </section>
@@ -417,6 +972,46 @@ POST /v1/images/edits
   <script>
     // Keep the footer year fresh without SSR
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Add intersection observer for smooth animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections and cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.section, .card, .kpi');
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+
+      // Add smooth scroll for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start' 
+            });
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <!-- Gradient definitions -->
+    <linearGradient id="bananaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.1" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="4" result="offset" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#shadowGradient)" opacity="0.1"/>
+  
+  <!-- Main banana shape -->
+  <path d="M25 45 Q30 25, 50 30 Q75 35, 85 50 Q90 65, 75 75 Q60 80, 45 75 Q30 70, 25 55 Z" 
+        fill="url(#bananaGradient)" 
+        filter="url(#dropShadow)"/>
+  
+  <!-- Banana highlight -->
+  <path d="M30 40 Q35 28, 48 32 Q65 36, 70 45 Q72 50, 68 52 Q60 55, 50 52 Q40 48, 35 45 Z" 
+        fill="#fde047" 
+        opacity="0.6"/>
+  
+  <!-- Banana stem -->
+  <ellipse cx="47" cy="32" rx="3" ry="6" fill="#65a30d" transform="rotate(-15 47 32)"/>
+  
+  <!-- Tech circuit pattern overlay -->
+  <g opacity="0.15" stroke="#1e40af" stroke-width="1" fill="none">
+    <circle cx="35" cy="50" r="2"/>
+    <circle cx="65" cy="60" r="1.5"/>
+    <line x1="35" y1="50" x2="45" y2="55"/>
+    <line x1="65" y1="60" x2="70" y2="65"/>
+    <rect x="70" y="45" width="4" height="4" rx="1"/>
+  </g>
+  
+  <!-- Nano dots pattern -->
+  <g fill="#3b82f6" opacity="0.3">
+    <circle cx="55" cy="65" r="1"/>
+    <circle cx="60" cy="62" r="0.8"/>
+    <circle cx="52" cy="68" r="0.6"/>
+    <circle cx="58" cy="70" r="0.8"/>
+  </g>
+</svg>
