@@ -246,16 +246,119 @@
       line-height: 1.7;
     }
 
-    /* Enhanced header */
-    header {
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(10,14,23,0.8);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+         /* Enhanced header */
+     header {
+       backdrop-filter: blur(20px);
+       -webkit-backdrop-filter: blur(20px);
+       background: rgba(10,14,23,0.8);
+       border-bottom: 1px solid var(--border);
+       position: sticky;
+       top: 0;
+       z-index: 100;
+     }
+
+     /* ApiQik Banner Styles - Final Compact Version */
+     .api-banner-container {
+       position: sticky;
+       top: 89px; /* Height of header */
+       z-index: 99;
+       background: linear-gradient(135deg, rgba(59,130,246,0.92), rgba(37,99,235,0.92));
+       backdrop-filter: blur(15px);
+       -webkit-backdrop-filter: blur(15px);
+       border-bottom: 1px solid rgba(59,130,246,0.25);
+       box-shadow: 0 2px 10px rgba(59,130,246,0.15);
+       transition: all 0.3s ease;
+     }
+
+     .api-banner {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 1px 0; /* Absolute minimal vertical padding */
+       gap: 8px;
+       position: relative;
+       min-height: auto;
+     }
+
+     .api-banner-content {
+       display: flex;
+       align-items: center;
+       gap: 8px;
+       flex: 1;
+     }
+
+     .api-banner-icon {
+       background: rgba(255,255,255,0.2);
+       color: white;
+       padding: 2px; /* Minimal icon padding */
+       border-radius: 3px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+
+     .api-banner-text {
+       display: flex;
+       align-items: center;
+     }
+
+     .api-banner-title {
+       color: white;
+       font-weight: 700;
+       font-size: 15px; /* Increased from 13px */
+       line-height: 1; /* Minimal line height */
+     }
+
+     .api-banner-features {
+       display: flex;
+       gap: 8px;
+       color: rgba(255,255,255,0.85);
+       font-size: 13px; /* Increased from 11px */
+       font-weight: 500;
+       line-height: 1;
+     }
+
+     .api-banner-features span {
+       position: relative;
+       padding-left: 8px;
+     }
+
+     .api-banner-features span::before {
+       content: '✓';
+       position: absolute;
+       left: 0;
+       color: #10b981;
+       font-weight: bold;
+       font-size: 9px;
+     }
+
+     .api-banner-actions {
+       display: flex;
+       align-items: center;
+     }
+
+     .api-banner-btn {
+       padding: 2px 8px; /* Minimal button padding */
+       border-radius: 4px;
+       font-weight: 600;
+       font-size: 13px; /* Increased from 11px */
+       text-decoration: none;
+       transition: all 0.2s ease;
+       white-space: nowrap;
+       line-height: 1;
+     }
+
+     .api-banner-btn.primary {
+       background: rgba(255,255,255,0.9);
+       color: #2563eb;
+       border: 1px solid rgba(255,255,255,0.2);
+     }
+
+     .api-banner-btn.primary:hover {
+       background: white;
+       transform: translateY(-1px);
+       box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+     }
 
     .logo {
       font-weight: 900;
@@ -559,36 +662,65 @@
       animation: fadeInUp 0.6s ease-out;
     }
 
-    /* Mobile optimizations */
-    @media (max-width: 980px) {
-      .wrap { padding: 20px; }
-      .hero { 
-        grid-template-columns: 1fr; 
-        padding: 40px 0;
-        gap: 32px;
-      }
-      .grid-3 { grid-template-columns: 1fr; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .kpis { grid-template-columns: 1fr 1fr; }
-      
-      .hero h1 {
-        font-size: clamp(28px, 8vw, 40px);
-      }
-      
-      .btn {
-        padding: 14px 20px;
-        font-size: 14px;
-      }
-      
-      .card {
-        padding: 20px;
-      }
-      
-      th, td {
-        padding: 12px 16px;
-        font-size: 14px;
-      }
-    }
+         /* Mobile optimizations */
+     @media (max-width: 980px) {
+       .wrap { padding: 20px; }
+       .hero { 
+         grid-template-columns: 1fr; 
+         padding: 40px 0;
+         gap: 32px;
+       }
+       .grid-3 { grid-template-columns: 1fr; }
+       .grid-2 { grid-template-columns: 1fr; }
+       .kpis { grid-template-columns: 1fr 1fr; }
+       
+       .hero h1 {
+         font-size: clamp(28px, 8vw, 40px);
+       }
+       
+       .btn {
+         padding: 14px 20px;
+         font-size: 14px;
+       }
+       
+       .card {
+         padding: 20px;
+       }
+       
+       th, td {
+         padding: 12px 16px;
+         font-size: 14px;
+       }
+
+       /* Mobile API Banner */
+       .api-banner-container {
+         top: 70px; /* Adjusted for mobile header height */
+       }
+
+       .api-banner {
+         padding: 0; /* No vertical padding on mobile */
+         gap: 4px;
+         min-height: 28px; /* Set a minimal fixed height */
+       }
+
+       .api-banner-content {
+         gap: 4px;
+       }
+
+       .api-banner-features {
+         display: none; /* Hide features on mobile for space */
+       }
+
+       .api-banner-title {
+         font-size: 14px; /* Increased from 12px for mobile */
+       }
+
+       .api-banner-btn {
+         padding: 2px 6px; /* Minimal button padding on mobile */
+         font-size: 12px; /* Increased from 10px for mobile */
+         line-height: 1;
+       }
+     }
 
     @media (max-width: 640px) {
       .kpis { grid-template-columns: 1fr; }
@@ -663,6 +795,33 @@
       <a href="#faq">FAQ</a>
     </nav>
   </header>
+
+  <!-- ApiQik Advertisement Banner - Compact Sticky -->
+  <div id="api-banner" class="api-banner-container">
+    <div class="wrap">
+      <div class="api-banner">
+        <div class="api-banner-content">
+          <div class="api-banner-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 3L4 14h7v7l9-11h-7V3z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="api-banner-text">
+            <span class="api-banner-title">⚡ ApiQik - World's Cheapest AI API Platform</span>
+          </div>
+          <div class="api-banner-features">
+            <span>Lowest prices</span>
+            <span>Free trial</span>
+          </div>
+        </div>
+        <div class="api-banner-actions">
+          <a href="https://api.apiqik.com/" target="_blank" class="api-banner-btn primary">
+            Try Free
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main class="wrap" id="content">
     <!-- HERO -->
@@ -854,50 +1013,36 @@
       </div>
     </section>
 
-                   <!-- API INTEGRATION -->
+                             <!-- API INTEGRATION (Detailed Section) -->
       <section class="section" id="api-integration" aria-labelledby="api-h">
-        <h2 id="api-h">API Integration</h2>
-        <div class="card" style="background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(251,191,36,0.05)); border: 1px solid rgba(59,130,246,0.2);">
-          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-            <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 12px; border-radius: 12px; box-shadow: 0 4px 15px rgba(59,130,246,0.3);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 3L4 14h7v7l9-11h-7V3z" fill="white"/>
-              </svg>
-            </div>
-            <div>
-              <h3 style="margin: 0; color: var(--fg); font-size: 20px;">🚀 ApiQik - Lightning-Fast API Gateway</h3>
-              <p style="margin: 4px 0 0; color: var(--accent-2); font-weight: 600;">Professional AI API Integration Solution</p>
-            </div>
+        <h2 id="api-h">API Integration with ApiQik</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Quick Integration</h3>
+            <p class="muted">Get started with ApiQik in minutes. Our RESTful API provides seamless access to Nano Banana and 50+ other AI models with consistent interfaces.</p>
+            <pre style="margin-top: 16px; font-size: 12px;">
+curl -X POST "https://api.apiqik.com/v1/image/edit" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "nano-banana",
+    "prompt": "Remove background, add studio lighting"
+  }'
+            </pre>
           </div>
-          <p class="muted" style="margin-bottom: 16px;">
-            Ready to integrate Nano Banana and other AI models? <strong>ApiQik</strong> provides developers with stable, high-speed API gateway services, supporting multiple AI models including image editing, text generation, and more.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: var(--success);">✓</span>
-              <span style="color: var(--muted); font-size: 14px;">99.9% Service Uptime</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: var(--success);">✓</span>
-              <span style="color: var(--muted); font-size: 14px;">Sub-100ms Response Time</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: var(--success);">✓</span>
-              <span style="color: var(--muted); font-size: 14px;">Enterprise-Grade Security</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: var(--success);">✓</span>
-              <span style="color: var(--muted); font-size: 14px;">24/7 Technical Support</span>
-            </div>
+          <div class="card">
+            <h3>Enterprise Features</h3>
+            <ul style="color: var(--muted); line-height: 1.8;">
+              <li>Global CDN with 99.9% uptime guarantee</li>
+              <li>Advanced rate limiting and usage analytics</li>
+              <li>White-label solutions for agencies</li>
+              <li>Custom model fine-tuning support</li>
+              <li>SOC2 Type II compliance</li>
+            </ul>
           </div>
-          <div style="display: flex; gap: 12px; margin-top: 20px;">
-            <a href="https://api.apiqik.com/" target="_blank" class="btn" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; text-decoration: none;">
-              Try ApiQik Now
-            </a>
-            <a href="https://api.apiqik.com/" target="_blank" class="btn alt" style="border-color: rgba(59,130,246,0.3); color: var(--accent-2); text-decoration: none;">
-              🎁 Start Free Trial
-            </a>
         </div>
+        <div class="note" style="margin-top: 20px;">
+          <strong>Special Offer:</strong> New users get $100 in free credits and priority support for the first month. No setup fees or long-term commitments required.
       </div>
     </section>
 
@@ -998,20 +1143,37 @@ POST /v1/images/edits
         observer.observe(el);
       });
 
-      // Add smooth scroll for navigation links
-      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const target = document.querySelector(link.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'start' 
-            });
-          }
-        });
-      });
-    });
+           // Add smooth scroll for navigation links
+     document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+       link.addEventListener('click', (e) => {
+         e.preventDefault();
+         const target = document.querySelector(link.getAttribute('href'));
+         if (target) {
+           target.scrollIntoView({ 
+             behavior: 'smooth', 
+             block: 'start' 
+           });
+         }
+       });
+     });
+   });
+
+   // API Banner functionality (close functionality removed)
+
+   // Track API banner clicks
+   document.addEventListener('DOMContentLoaded', () => {
+     const apiBtns = document.querySelectorAll('.api-banner-btn');
+     apiBtns.forEach(btn => {
+       btn.addEventListener('click', () => {
+         if (typeof gtag !== 'undefined') {
+           gtag('event', 'click', {
+             event_category: 'API Banner',
+             event_label: btn.textContent.trim()
+           });
+         }
+       });
+     });
+   });
   </script>
 </body>
 </html>
